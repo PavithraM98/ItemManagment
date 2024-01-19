@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -29,3 +30,5 @@ Route::post('/products/update/{id}' , [ItemController::class,'update'])->name('p
 Route::get('/products/destroy/{id}' , [ItemController::class,'destroy'])->name('products.destroy');
 Route::get('/products/show' , [ItemController::class,'getData'])->name('products.show');
 // Route::get('/products/show', 'ItemController@getData')->name('products.show');
+
+Route::resource('posts', PostController::class);
